@@ -16,11 +16,16 @@ var _shape2d: RectangleShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if get_child_count() > 0:
+		var child_to_remove = get_child(0)
+		remove_child(child_to_remove)
+		pass
+
 	_collision_shape = CollisionShape2D.new()
-	var shape2d = RectangleShape2D.new()
-	shape2d.size.x = 1080
-	shape2d.size.y = 50
-	_collision_shape.shape = shape2d
+	_shape2d = RectangleShape2D.new()
+	size = Vector2(1080, 50)
+	_shape2d.size = size
+	_collision_shape.shape =_shape2d
 	add_child(_collision_shape)
 	pass # Replace with function body.
 
