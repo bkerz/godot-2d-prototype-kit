@@ -5,8 +5,14 @@ enum Axis {
 	Horizontal,
 	Vertical
 }
+## The direction the Platform will be align to
 @export var direction: Axis
-var _collision_shape: CollisionShape2D
+## The Size of the Shape2D in the CollisionShape2D of the Platform
+@export var size: Vector2
+
+var _collision_shape: CollisionShape2D 
+var _shape2d: RectangleShape2D 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
