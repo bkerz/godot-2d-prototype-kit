@@ -23,7 +23,7 @@ func _ready():
 
 	_collision_shape = CollisionShape2D.new()
 	_shape2d = RectangleShape2D.new()
-	size = Vector2(1080, 50)
+	_set_shape_size()
 	_shape2d.size = size
 	_collision_shape.shape =_shape2d
 	add_child(_collision_shape)
@@ -32,18 +32,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Engine.is_editor_hint():
-		if direction == Axis.Horizontal:
-			_collision_shape.rotation = PI
-			pass
-		if direction == Axis.Vertical:
-			_collision_shape.rotation = PI / 2
-			pass
+	if direction == Axis.Horizontal:
+		_collision_shape.rotation = PI
 		pass
+	if direction == Axis.Vertical:
+		_collision_shape.rotation = PI / 2
+		pass
+	pass
 	_set_shape_size()
-			
-	if not Engine.is_editor_hint():
-		pass
 	pass
 
 func _set_shape_size():
