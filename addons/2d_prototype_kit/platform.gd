@@ -35,10 +35,24 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		if direction == Axis.Horizontal:
 			_collision_shape.rotation = PI
+			pass
 		if direction == Axis.Vertical:
 			_collision_shape.rotation = PI / 2
-			
+			pass
+		pass
+	_set_shape_size()
 			
 	if not Engine.is_editor_hint():
 		pass
 	pass
+
+func _set_shape_size():
+	if size.x < 1:
+		_shape2d.size.x = 1080
+	else:
+		_shape2d.size.x = size.x
+	if size.y < 1:
+		_shape2d.size.y = 50
+	else:
+		_shape2d.size.y = size.y
+		pass
