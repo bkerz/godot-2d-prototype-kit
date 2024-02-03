@@ -1,6 +1,5 @@
 @tool
 extends StaticBody2D
-class_name Platform
 
 enum Axis {
 	Horizontal,

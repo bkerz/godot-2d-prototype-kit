@@ -1,6 +1,5 @@
 @tool
 extends StaticBody2D
-class_name Obstacle
 
 var _collision_shape: CollisionShape2D
 
